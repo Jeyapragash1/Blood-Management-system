@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request Dashboard</title>
+    <link rel="stylesheet" href="../styles/reguest_user.css">
+    <script src="../scripts/request_user.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/log.png" alt="BMS Logo" class="logo">
+            <h2>Blood Request Dashboard</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#my-requests">My Requests</a></li>
+                <li><a href="#request-blood">Request Blood</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h1>Welcome to Your Blood Request Dashboard</h1>
+            <p>Manage your blood requests efficiently and stay informed.</p>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="dashboard-section overview">
+            <h2>Overview</h2>
+            <div class="card">
+                <h3>Total Requests</h3>
+                <p id="total-requests">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Pending Requests</h3>
+                <p id="pending-requests">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Approved Requests</h3>
+                <p id="approved-requests">Loading...</p>
+            </div>
+        </section>
+
+        <!-- My Requests Section -->
+        <section id="my-requests" class="dashboard-section">
+            <h2>My Blood Requests</h2>
+            <div id="request-list" class="data-table">
+                <!-- Blood request details populated here dynamically -->
+            </div>
+        </section>
+
+        <!-- Request Blood Section -->
+        <section id="request-blood" class="dashboard-section">
+            <h2>Request Blood</h2>
+            <form id="blood-request-form" onsubmit="submitRequest(event)">
+                <label for="blood-type">Blood Type:</label>
+                <select id="blood-type" required>
+                    <option value="">Select Blood Type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+                <label for="quantity">Quantity (Units):</label>
+                <input type="number" id="quantity" min="1" required>
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+
+        <!-- Notifications Section -->
+        <section id="notifications" class="dashboard-section">
+            <h2>Notifications</h2>
+            <div id="notification-list" class="notification-table">
+                <!-- Notifications will be populated here dynamically -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

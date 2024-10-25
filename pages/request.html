@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Can Request Blood?</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/request.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="../images/log.png" alt="BMS Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donners.html">Donors</a></li>
+                <li><a href="request.html">Request Blood</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <nav>
+        <ul>
+            <li>
+                <a href="../logins/register.html">Request blood for emergencies.</a>
+            </li>
+    </ul>
+</nav>
+        
+    </header>
+    <script>
+        window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+});
+
+    </script>
+   
+
+    <main>
+        <!-- Introduction Section -->
+        <section class="intro">
+            <h2>What is a Blood Request?</h2>
+            <p>A blood request is a formal way of seeking blood donations for patients in need of transfusions due to surgeries, medical conditions, trauma, or emergencies.</p>
+        </section>
+
+        <!-- Eligibility Criteria Section -->
+        <section class="eligibility">
+            <h2>Eligibility to Request Blood</h2>
+            <ul>
+                <li>Patients with medical conditions requiring blood transfusions (e.g., anemia, thalassemia).</li>
+                <li>Individuals undergoing major surgeries or treatments like chemotherapy.</li>
+                <li>Accident or trauma patients with significant blood loss.</li>
+                <li>Pregnant women with complications needing emergency blood support.</li>
+                <li>Families of patients who are unable to source blood through other means.</li>
+            </ul>
+        </section>
+
+        <!-- How to Request Blood Section -->
+        <section class="request-process">
+            <h2>How to Request Blood</h2>
+            <p>If you or someone you know meets the eligibility criteria, you can follow these steps to request blood:</p>
+            <ol>
+                <li>Contact our blood management system or visit a nearby blood bank.</li>
+                <li>Provide the necessary patient information, including blood type, required units, and urgency.</li>
+                <li>Submit a request through our platform or via phone. You’ll be updated on the request status and availability.</li>
+                <li>Pick up the blood or arrange for delivery if available.</li>
+            </ol>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="contact">
+            <h2>Our Contact Information</h2>
+            <p>Email: blood@gmail.com</p>
+            <p>Phone: +94 763036242</p>
+            <p>Address:main street Batticaloa, Sri Lanka</p>
+        
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blood Management System</p>
+    </footer>
+
+    <script>
+        // Get the current page path
+        const currentPath = window.location.pathname.split("/").pop();
+        
+        // Select all navigation links
+        const navLinks = document.querySelectorAll("nav ul li a");
+        
+        // Loop through links to match the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active"); // Add 'active' class to the matching link
+            }
+        });
+        </script>
+        
+</body>
+</html>

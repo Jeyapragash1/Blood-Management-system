@@ -1,0 +1,174 @@
+/* Basic reset and body styles */
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background color */
+    display: flex;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed; /* Fix the sidebar in place */
+    top: 0;
+    left: 0;
+    width: 250px; /* Width of the sidebar */
+    height: 100%; /* Full height of the viewport */
+    background-color: #343a40; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-header .logo {
+    width: 50px; /* Logo size */
+    margin-right: 10px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s; /* Transition for background and transform */
+}
+
+.sidebar-nav a:hover {
+    background-color: #495057; /* Hover background color */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Main content styles */
+.dashboard {
+    margin-left: 250px; /* Leave space for the sidebar */
+    padding: 20px; /* Main content padding */
+    flex-grow: 1; /* Allow main content to take up remaining space */
+    transition: margin-left 0.3s; /* Smooth transition for margin change */
+}
+
+.dashboard-header {
+    margin-bottom: 20px; /* Spacing below header */
+}
+
+.dashboard-section {
+    margin-bottom: 30px; /* Spacing between sections */
+    background: #ffffff; /* White background for sections */
+    padding: 20px; /* Section padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Initial position offset */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation for opacity and position */
+}
+
+/* Animate section appearance */
+.dashboard-section.fade-in {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Card styles for statistics */
+.card {
+    background: #007bff; /* Bootstrap primary color */
+    color: #ffffff; /* White text */
+    padding: 15px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0; /* Spacing between cards */
+    transition: transform 0.3s; /* Scale effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Form styles */
+form {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Vertical stacking */
+}
+
+form label {
+    margin: 10px 0 5px; /* Spacing around labels */
+}
+
+form input,
+form select {
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 10px; /* Space below inputs */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+form input:focus,
+form select:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+button {
+    padding: 10px;
+    background-color: #007bff; /* Button color */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Transition for background and transform */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Notification styles */
+.notification-table {
+    max-height: 200px; /* Max height for notification table */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.notification {
+    background: #28a745; /* Green background for notifications */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    margin: 5px 0; /* Spacing between notifications */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease; /* Animation for fade in */
+}
+
+.notification.fade-in {
+    opacity: 1; /* Fade in */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Narrower sidebar for smaller screens */
+    }
+
+    .dashboard {
+        margin-left: 200px; /* Adjust margin for smaller sidebar */
+    }
+}

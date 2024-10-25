@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.animated-header {
+    background: linear-gradient(120deg, #f44336, #c0392b, #f39c12);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 25px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+main {
+    padding-top: 100px; /* Add padding to offset fixed header height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjust height as needed */
+}
+
+.registration-form {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Adjust the width as necessary */
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h2 {
+    color: #e74c3c;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden for animation */
+}
+
+.form-group.slideInLeft {
+    animation: slideInLeft 0.5s ease forwards;
+    animation-delay: 0.2s; /* Delay for staggered effect */
+}
+
+.form-group.slideInRight {
+    animation: slideInRight 0.5s ease forwards;
+    animation-delay: 0.4s; /* Delay for staggered effect */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+    border-color: #e74c3c;
+}
+
+button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e74c3c; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: bounceIn 0.5s ease forwards; /* Animation for button */
+}
+
+button.submit-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(120deg, #f44336, #c0392b, #f39c12);
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
+    margin-top: 70px;
+
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us | Blood Management System</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/contact.css"> <!-- Separate CSS for Contact Us page -->
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="../images/log.png" alt="BMS Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donners.html">Donors</a></li>
+                <li><a href="request.html">Request Blood</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <a href="../logins/login .html" class="login-btn">Login</a>
+            <a href="../logins/register.html" class="register-btn">Register</a>
+        </div>
+    </header>
+<br><br>
+
+<script>
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+});
+
+</script>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h1 class="fade-in">Contact Us</h1>
+            <div class="contact-content fade-in">
+                <p>Have questions? We'd love to hear from you! Use the form below to send us a message or reach out to us directly.</p>
+            </div>
+            <div class="contact-form fade-in">
+                <form action="submit_contact.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            </section>
+            <section id="contact" class="contact-section">
+                <div class="container">
+            <div class="contact-info fade-in">
+                <h2>Our Contact Information</h2>
+                <p>Email: blood@gmail.com</p>
+                <p>Phone: +94 763036242</p>
+                <p>Address:main street Batticaloa, Sri Lanka</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2024 Blood Management System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the current page path
+        const currentPath = window.location.pathname.split("/").pop();
+        
+        // Select all navigation links
+        const navLinks = document.querySelectorAll("nav ul li a");
+        
+        // Loop through links to match the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active"); // Add 'active' class to the matching link
+            }
+        });
+        </script>
+        
+    <script src="../scripts/script.js"></script> <!-- Main JS file -->
+</body>
+</html>

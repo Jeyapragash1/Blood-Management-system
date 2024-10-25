@@ -6,81 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blood Management System</title>
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/header.css">
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <h1>Blood Management System</h1>
+            <a href="index.html"><img src="../images/log.png" alt="BMS Logo"></a>
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#donors">Donors</a></li>
-                <li><a href="#request-blood">Request Blood</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donners.html">Donors</a></li>
+                <li><a href="request.html">Request Blood</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacus.html">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="auth-links">
+            <a href="../logins/login .html" class="login-btn">Login</a>
+            <a href="../logins/register.html" class="register-btn">Register</a>
+        </div>
     </header>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+});
+
+    </script>
 
     <section id="home" class="hero">
         <div class="hero-text">
             <h2>Donate Blood, Save Lives</h2>
             <p>Your small step can give someone another chance at life. Join us and be a hero today!</p>
-            <a href="#" class="btn">Become a Donor</a>
+            <a href="donners.html" class="btn">Become a Donor</a>
         </div>
     </section>
 
-    <section id="about" class="features fade-in">
-        <div class="feature">
-            <h3>For Donors</h3>
-            <p>Register to donate blood and save lives. Schedule your donation with ease.</p>
-        </div>
-        <div class="feature">
-            <h3>For Patients</h3>
-            <p>Easily request blood and track your request status online.</p>
-        </div>
-        <div class="feature">
-            <h3>Blood Bank Management</h3>
-            <p>Monitor and manage blood stocks, ensuring blood is available when needed.</p>
-        </div>
-    </section>
+    
 
-    <section id="donors" class="how-it-works slide-up">
-        <h2>How It Works</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>1. Register</h3>
-                <p>Create an account as a donor or a patient to start the process.</p>
-            </div>
-            <div class="step">
-                <h3>2. Schedule</h3>
-                <p>Donors can schedule appointments for blood donation, while patients can request blood.</p>
-            </div>
-            <div class="step">
-                <h3>3. Donate or Receive</h3>
-                <p>Donors give blood at the selected location, and patients receive blood promptly.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials fade-in">
-        <h2>What People Say</h2>
-        <div class="testimonial">
-            <p>"This platform made it so easy for me to find a blood donor for my surgery. A true lifesaver!" - <strong>Sarah K.</strong></p>
-        </div>
-        <div class="testimonial">
-            <p>"I've been donating blood for years, and this system has made the process incredibly smooth and efficient." - <strong>John D.</strong></p>
-        </div>
-        <div class="testimonial">
-            <p>"As a doctor, I can easily match patients with available donors, which has significantly improved patient outcomes." - <strong>Dr. Emily W.</strong></p>
-        </div>
-    </section>
+  
 
     <footer id="contact">
         <p>&copy; 2024 Blood Management System. All rights reserved.</p>
     </footer>
+    <script>
+        // Get the current page path
+        const currentPath = window.location.pathname.split("/").pop();
+        
+        // Select all navigation links
+        const navLinks = document.querySelectorAll("nav ul li a");
+        
+        // Loop through links to match the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active"); // Add 'active' class to the matching link
+            }
+        });
+        </script>
+        
 
     <script src="/scripts/script.js"></script>
 </body>

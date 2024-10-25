@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Management System - Register</title>
+    <link rel="stylesheet" href="../styles/register.css">
+    <style>
+        /* Add your custom styles here */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<header class="animated-header">
+    <div class="header-content">
+        <p>Register to save lives and make a difference</p>
+    </div>
+</header>
+
+<main>
+    <section class="registration-form" aria-labelledby="registrationFormHeading">
+        <h2 id="registrationFormHeading">Create an Account</h2>
+        <form action="register.php" method="POST" id="registrationForm" novalidate>
+            <!-- User Type Selection -->
+            <div class="form-group">
+                <label for="user_type">I am a: </label>
+                <select id="user_type" name="user_type" required onchange="toggleFields()">
+                    <option value="">Select User Type</option>
+                    <option value="donor">Donor</option>
+                    <option value="request">Request Blood</option>
+                </select>
+                <span class="error" id="userTypeError"></span>
+            </div>
+
+            <!-- Common Personal Information -->
+            <div class="form-group">
+                <label for="first_name">First Name </label>
+                <input type="text" id="first_name" name="first_name" required aria-required="true">
+                <span class="error" id="firstNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name </label>
+                <input type="text" id="last_name" name="last_name" required aria-required="true">
+                <span class="error" id="lastNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="nic">National ID (NIC) </label>
+                <input type="text" id="nic" name="nic" maxlength="12" required pattern="[0-9]{9}[Vv]">
+                <span class="error" id="nicError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number </label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City </label>
+                <input type="text" id="city" name="city" required>
+                <span class="error" id="cityError"></span>
+            </div>
+
+            <!-- Donor Specific Fields -->
+            <div id="donorFields" style="display:none;" aria-hidden="true">
+                <div class="form-group">
+                    <label for="blood_type">Blood Type </label>
+                    <select id="blood_type" name="blood_type" required>
+                        <option value="">Select Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    <span class="error" id="bloodTypeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password </label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                    <span class="error" id="passwordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password </label>
+                    <input type="password" id="confirm_password" name="confirm_password" required minlength="8">
+                    <span class="error" id="confirmPasswordError"></span>
+                </div>
+            </div>
+
+            <!-- Request Blood Specific Fields -->
+            <div id="requestFields" style="display:none;" aria-hidden="true">
+                <div class="form-group">
+                    <label for="request_reason">Reason for Request </label>
+                    <input type="text" id="request_reason" name="request_reason" required>
+                    <span class="error" id="requestReasonError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="relation">Relation to the Patient </label>
+                    <input type="text" id="relation" name="relation" required>
+                    <span class="error" id="relationError"></span>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>.
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Register</button>
+
+            <!-- Already have an account? -->
+            <div class="form-group">
+                <p>Already have an account? <a href="login.html">Login now</a></p>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Blood Management System | Sri Lanka Health Services</p>
+</footer>
+
+<script src="../scripts/regi.js"></script>
+<script>
+    function toggleFields() {
+        const userType = document.getElementById('user_type').value;
+        const donorFields = document.getElementById('donorFields');
+        const requestFields = document.getElementById('requestFields');
+
+        if (userType === 'donor') {
+            donorFields.style.display = 'block';
+            donorFields.classList.add('fade-in');
+            requestFields.style.display = 'none';
+            requestFields.classList.remove('fade-in');
+            requestFields.setAttribute('aria-hidden', 'true');
+        } else if (userType === 'request') {
+            requestFields.style.display = 'block';
+            requestFields.classList.add('fade-in');
+            donorFields.style.display = 'none';
+            donorFields.classList.remove('fade-in');
+            donorFields.setAttribute('aria-hidden', 'true');
+        } else {
+            donorFields.style.display = 'none';
+            requestFields.style.display = 'none';
+            donorFields.classList.remove('fade-in');
+            requestFields.classList.remove('fade-in');
+            donorFields.setAttribute('aria-hidden', 'true');
+            requestFields.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        let valid = true;
+
+        // Clear previous errors
+        document.querySelectorAll('.error').forEach(error => error.textContent = '');
+
+        // Validate each required field
+        const userType = document.getElementById('user_type').value;
+        if (!userType) {
+            document.getElementById('userTypeError').textContent = 'Please select a user type.';
+            valid = false;
+        }
+
+        const firstName = document.getElementById('first_name').value;
+        if (!firstName) {
+            document.getElementById('firstNameError').textContent = 'First name is required.';
+            valid = false;
+        }
+
+        const lastName = document.getElementById('last_name').value;
+        if (!lastName) {
+            document.getElementById('lastNameError').textContent = 'Last name is required.';
+            valid = false;
+        }
+
+        const nic = document.getElementById('nic').value;
+        if (!nic.match(/[0-9]{9}[Vv]/)) {
+            document.getElementById('nicError').textContent = 'Invalid NIC format (e.g. 123456789V).';
+            valid = false;
+        }
+
+        const phone = document.getElementById('phone').value;
+        if (!phone.match(/[0-9]{10}/)) {
+            document.getElementById('phoneError').textContent = 'Phone number must be 10 digits.';
+            valid = false;
+        }
+
+        const email = document.getElementById('email').value;
+        if (!email) {
+            document.getElementById('emailError').textContent = 'Email is required.';
+            valid = false;
+        }
+
+        const city = document.getElementById('city').value;
+        if (!city) {
+            document.getElementById('cityError').textContent = 'City is required.';
+            valid = false;
+        }
+
+        if (userType === 'donor') {
+            const bloodType = document.getElementById('blood_type').value;
+            if (!bloodType) {
+                document.getElementById('bloodTypeError').textContent = 'Please select a blood type.';
+                valid = false;
+            }
+
+            const password = document.getElementById('password').value;
+            if (!password || password.length < 8) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters.';
+                valid = false;
+            }
+
+            const confirmPassword = document.getElementById('confirm_password').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                valid = false;
+            }
+        }
+
+        if (userType === 'request') {
+            const requestReason = document.getElementById('request_reason').value;
+            if (!requestReason) {
+                document.getElementById('requestReasonError').textContent = 'Reason for request is required.';
+                valid = false;
+            }
+
+            const relation = document.getElementById('relation').value;
+            if (!relation) {
+                document.getElementById('relationError').textContent = 'Relation to the patient is required.';
+                valid = false;
+            }
+        }
+
+        // Prevent form submission if not valid
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

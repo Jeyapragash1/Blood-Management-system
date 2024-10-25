@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Management System - Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+
+    <header class="animated-header">
+        <div class="header-content">
+            <p>Login to access your account</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="registration-form fadeInUp">
+            <h2>Login to Your Account</h2>
+            <form action="login.php" method="POST">
+                <!-- Email Field -->
+                <div class="form-group slideInLeft">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group slideInRight">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn bounceIn">Login</button>
+
+                <!-- Link to Register Page -->
+                <p style="text-align:center; margin-top: 10px;">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+<footer>
+    <p>&copy; 2024 Blood Management System | Sri Lanka Health Services</p>
+</footer>
+
+</body>
+</html>

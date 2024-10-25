@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard - Blood Management System</title>
+    <link rel="stylesheet" href="../styles/donner.css">
+    <script src="../scripts/donner.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/log.png" alt="BMS Logo" class="logo">
+            <h2>Donor Dashboard</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#my-donations">My Donations</a></li>
+                <li><a href="#schedule-donation">Schedule Donation</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h1>Welcome, Donor</h1>
+            <p>Manage your donations and stay informed about your donation history.</p>
+            <div class="notification-area">
+                <p id="notification-message">You have new notifications!</p>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="overview-cards">
+            <div class="card">
+                <h3>Total Donations</h3>
+                <p id="total-donations">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Upcoming Appointments</h3>
+                <p id="upcoming-appointments">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Donation History</h3>
+                <p id="donation-history">Loading...</p>
+            </div>
+        </section>
+
+        <!-- My Donations Section -->
+        <section id="my-donations" class="dashboard-section">
+            <h2>My Donations</h2>
+            <div id="donation-list" class="data-table">
+                <!-- Donation details populated here dynamically -->
+            </div>
+        </section>
+
+        <!-- Schedule Donation Section -->
+        <section id="schedule-donation" class="dashboard-section">
+            <h2>Schedule a Donation</h2>
+            <form id="donation-form">
+                <label for="donation-date">Select Date:</label>
+                <input type="date" id="donation-date" required>
+                <label for="donation-time">Select Time:</label>
+                <input type="time" id="donation-time" required>
+                <button type="submit">Schedule Donation</button>
+            </form>
+            <div id="schedule-message"></div>
+        </section>
+
+        <!-- Notifications Section -->
+        <section id="notifications" class="dashboard-section">
+            <h2>Notifications</h2>
+            <div id="notification-list" class="data-table">
+                <!-- Notifications populated here dynamically -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

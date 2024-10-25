@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Blood Management System</title>
+    <link rel="stylesheet" href="../styles/doctor.css">
+    <script src="../scripts/doctor.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/log.png" alt="BMS Logo" class="logo">
+            <h2>Doctor Dashboard</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#patient-requests">Patient Requests</a></li>
+                <li><a href="#donation-schedules">Donation Schedules</a></li>
+                <li><a href="#blood-stock">Blood Stock Levels</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h1>Welcome, Doctor</h1>
+            <p>Review patient requests, manage donation schedules, and monitor blood stocks.</p>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="overview-cards">
+            <div class="card fade-in">
+                <h3>Total Patient Requests</h3>
+                <p id="total-requests">Loading...</p>
+            </div>
+            <div class="card fade-in">
+                <h3>Scheduled Donations</h3>
+                <p id="scheduled-donations">Loading...</p>
+            </div>
+            <div class="card fade-in">
+                <h3>Blood Stock Availability</h3>
+                <p id="stock-levels">Loading...</p>
+            </div>
+        </section>
+
+        <!-- Patient Requests Section -->
+        <section id="patient-requests" class="dashboard-section">
+            <h2>Patient Requests</h2>
+            <p>Review patient blood requests and forward them to the admin for final approval.</p>
+            <div id="patient-requests-list" class="data-table">
+                <!-- Patient request details populated here dynamically -->
+            </div>
+            <button onclick="loadPatientRequests()" class="fade-in">Load Patient Requests</button>
+        </section>
+
+        <!-- Donation Schedules Section -->
+        <section id="donation-schedules" class="dashboard-section">
+            <h2>Donation Schedules</h2>
+            <p>Manage and review upcoming blood donation appointments.</p>
+            <div id="donation-schedule-list" class="data-table">
+                <!-- Donation schedule details populated here dynamically -->
+            </div>
+            <button onclick="loadDonationSchedules()" class="fade-in">View Donation Schedules</button>
+        </section>
+
+        <!-- Blood Stock Levels Section -->
+        <section id="blood-stock" class="dashboard-section">
+            <h2>Blood Stock Levels</h2>
+            <p>View the current blood stock levels in the blood bank.</p>
+            <div id="blood-stock-list" class="data-table">
+                <!-- Blood stock details populated here dynamically -->
+            </div>
+            <button onclick="loadBloodStock()" class="fade-in">Check Blood Stock</button>
+        </section>
+    </main>
+</body>
+</html>

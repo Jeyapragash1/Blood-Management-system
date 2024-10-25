@@ -1,163 +1,133 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth; /* Smooth scrolling */
-}
 
-header {
-    background: #283593;
-    color: white;
-    padding: 20px 40px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
+/* Hero Section */
 .hero {
-    background: url('https://images.unsplash.com/photo-1576765607924-1355b144a271') no-repeat center center/cover;
-    height: 70vh;
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('../images/blood.jpeg'); /* Add your background image path here */
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     text-align: center;
-    opacity: 0; /* Start transparent for animation */
-    animation: fadeIn 2s forwards; /* Fade-in animation */
+    color: #fff;
+    padding: 0 20px;
+}
+
+/* Add a semi-transparent overlay over the background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Style for the text in the hero section */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation for the text */
 }
 
 .hero-text h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1.5s ease-in-out; /* Slide-in animation for the heading */
 }
 
 .hero-text p {
-    margin: 20px 0;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
-.btn {
-    background: #f44336;
-    padding: 12px 25px;
-    color: white;
+/* Style for the button */
+.hero-text .btn {
+    padding: 15px 30px;
+    background-color: #f04e4e;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    animation: slideInFromRight 1.5s ease-in-out; /* Slide-in animation for the button */
     text-decoration: none;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    transition: background 0.3s ease;
 }
 
-.btn:hover {
-    background: #d32f2f;
+.hero-text .btn:hover {
+    background-color: #d94343;
 }
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding in the heading from the left */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation for sliding in the button from the right */
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Make hero section responsive */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-text .btn {
+        padding: 10px 20px;
+    }
+}
+
 
 /* Features Section */
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 20px;
-    background: #f1f1f1;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease; /* Transition */
-}
-
-.features.fade-in {
-    opacity: 1;
-    transform: translateY(0); /* When element comes into view */
-}
-
-.feature {
-    text-align: center;
-    width: 30%;
-}
-
-.feature h3 {
-    font-size: 1.6rem;
-    color: #283593;
-    margin-bottom: 20px;
-}
-
-.how-it-works {
-    padding: 50px 20px;
-    background: #e8eaf6;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.how-it-works.slide-up {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.steps {
-    display: flex;
-    justify-content: space-around;
-}
-
-.step {
-    width: 30%;
-}
-
-.step h3 {
-    font-size: 1.6rem;
-    color: #283593;
-}
-
-.testimonials {
-    padding: 50px 20px;
-    background: #f44336;
-    color: white;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.testimonials.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 footer {
-    background: #333;
-    color: white;
     text-align: center;
-    padding: 30px 0;
+    padding: 20px;
+    background: linear-gradient(120deg, #f44336, #c0392b, #f39c12);
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
+    /* margin-top: 50px; */
 }
 
 /* Animations */

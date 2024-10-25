@@ -1,0 +1,133 @@
+
+/* Main Terms Section Styling */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out; /* Animation on load */
+}
+
+.terms-section h1 {
+    color: #f44336;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.terms-section h2 {
+    color: #f44336;
+    font-size: 1.5em;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.terms-section p, .terms-section ul li {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #555;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.terms-section ul {
+    margin-left: 20px;
+    padding-left: 10px;
+    list-style-type: square;
+}
+
+.terms-section ul li {
+    position: relative;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Highlight Strong Tags */
+.terms-section ul li strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Button Styles for Call to Action */
+.terms-section .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: bounceIn 1.5s ease-in-out;
+}
+
+.terms-section .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Additional Animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(120deg, #f44336, #c0392b, #f39c12);
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
+    /* margin-top: 50px; */
+}

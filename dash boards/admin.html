@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Blood Management System</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+    <script src="../scripts/admin-dashboard.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../images/log.png" alt="BMS Logo" class="logo">
+            <h2>Admin Dashboard</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#overview" data-section="overview">Overview</a></li>
+                <li><a href="#donors" data-section="donors">Manage Donors</a></li>
+                <li><a href="#requests" data-section="requests">Blood Requests</a></li>
+                <li><a href="#doctors" data-section="doctors">Manage Doctors</a></li>
+                <li><a href="logout.html" data-section="logout">Logout</a></li>
+            </ul>
+        </nav>
+        
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h1>Welcome, Admin</h1>
+            <p>Monitor and manage blood requests, donors, and doctors efficiently.</p>
+            <div class="notification-area">
+                <p id="notification-message">You have 3 pending requests and low blood stock alerts!</p>
+            </div>
+        </header>
+    
+        <!-- Overview Cards Section -->
+        <section id="overview" class="overview-cards">
+            <div class="card">
+                <h3>Total Donors</h3>
+                <p id="total-donors">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Pending Requests</h3>
+                <p id="pending-requests">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Total Doctors</h3>
+                <p id="total-doctors">Loading...</p>
+            </div>
+        </section>
+    
+        <!-- Donor Management Section -->
+        <section id="donors" class="dashboard-section">
+            <h2>Donor Management</h2>
+            <button onclick="loadDonors()">View All Donors</button>
+            <input type="text" id="donor-search" placeholder="Search donors..." onkeyup="searchDonors()">
+            <div id="donor-list" class="data-table">
+                <!-- Donor details populated here dynamically -->
+            </div>
+        </section>
+    
+        <!-- Blood Requests Section -->
+        <section id="requests" class="dashboard-section">
+            <h2>Blood Requests Approval</h2>
+            <button onclick="loadRequests()">View Pending Requests</button>
+            <input type="text" id="request-search" placeholder="Search requests..." onkeyup="searchRequests()">
+            <div id="request-list" class="data-table">
+                <!-- Blood request details populated here dynamically -->
+            </div>
+        </section>
+    
+        <!-- Doctor Management Section -->
+        <section id="doctors" class="dashboard-section">
+            <h2>Doctor Management</h2>
+            <button onclick="loadDoctors()">View All Doctors</button>
+            <input type="text" id="doctor-search" placeholder="Search doctors..." onkeyup="searchDoctors()">
+            <div id="doctor-list" class="data-table">
+                <!-- Doctor details populated here dynamically -->
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

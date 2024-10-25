@@ -1,0 +1,168 @@
+/* General Reset for Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Base Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(120deg, #e74c3c, #c0392b, #f39c12);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+    text-align: center;
+    overflow: hidden;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated Sticky Effect */
+header.sticky {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Animation */
+header .logo img {
+    height: 50px;
+    width: 50px;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+header.sticky .logo img {
+    transform: scale(0.9); /* Slightly smaller on sticky */
+}
+
+/* Navigation Links */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animated Fade-in for Navigation Links */
+nav ul li {
+    position: relative;
+    animation: fadeInDown 0.5s ease forwards;
+    opacity: 0; /* Start invisible */
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.1s; }
+nav ul li:nth-child(2) { animation-delay: 0.2s; }
+nav ul li:nth-child(3) { animation-delay: 0.3s; }
+nav ul li:nth-child(4) { animation-delay: 0.4s; }
+
+nav ul li a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Hover Underline Animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f1c40f;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Auth Links Styling */
+.auth-links a {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.auth-links a:hover {
+    background-color: #d94343;
+    transform: scale(1.1);
+}
+
+/* Keyframes for Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header {
+        padding: 15px 30px;
+    }
+
+    .auth-links a {
+        margin: 10px 0 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 40px;
+        width: 40px;
+    }
+}
+/* Example styling for active link */
+nav ul li a.active {
+    color: #671404; /* Active link color */
+    font-weight: bold;
+    border-bottom: 2px solid #950c0c; /* Underline */
+}

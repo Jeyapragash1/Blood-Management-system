@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.animated-header {
+    background: linear-gradient(120deg, #e74c3c, #c0392b, #f39c12);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 25px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+main {
+    padding-top: 100px; /* Add padding to offset fixed header height */
+}
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    animation: bounceIn 1.2s ease;
+}
+
+.header-content p {
+    font-size: 2.2rem;
+    opacity: 0.8;
+    margin-top: 10px;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.registration-form {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    animation: slideIn 1.5s ease;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #e74c3c;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover,
+select:hover {
+    border-color: #e74c3c;
+}
+
+button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(120deg, #f44336, #c0392b, #f39c12);
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
+    margin-top: 70px;
+}
+

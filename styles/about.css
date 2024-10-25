@@ -1,0 +1,184 @@
+/* General styles for the About Us page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+    margin: 50px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #c0392b;
+    animation: fadeInDown 1s ease-in-out forwards;
+}
+
+.about-content {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 30px 0;
+    color: #2980b9;
+    animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.team-member {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    animation: rotateIn 1s ease-in-out forwards;
+}
+
+.team-member h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-200deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .team-member {
+        width: 45%; /* Adjust team members on medium screens */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-content {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%; /* Stack team members on small screens */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .about-content {
+        font-size: 1rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(120deg, #f44336, #c0392b, #f39c12);
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
+    margin-top: 70px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Donor</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/donner.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="../images/log.png" alt="BMS Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donners.html">Donors</a></li>
+                <li><a href="request.html">Request Blood</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <nav>
+        <ul>
+            <li>
+                <a href="../logins/register.html">Help save lives by donating blood.</a>
+            </li>
+    </ul>
+</nav>
+        
+    </header>
+    <script>
+        window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+});
+
+    </script>
+   
+
+    <main>
+        <section class="intro">
+            <h2>What is Blood Donation?</h2>
+            <p>Blood donation is a simple yet impactful act that can save lives. Your donation can help patients in need of blood for surgeries, medical conditions, or emergencies.</p>
+        </section>
+
+        <section class="eligibility">
+            <h2>Eligibility Criteria</h2>
+            <ul>
+                <li>You must be at least 18 years old.</li>
+                <li>Weigh at least 110 pounds (50 kg).</li>
+                <li>Be in good health and feel well on the day of donation.</li>
+                <li>No recent surgeries or major medical procedures.</li>
+                <li>Consult with a medical professional if you have health concerns.</li>
+            </ul>
+        </section>
+
+        <section class="benefits">
+            <h2>Benefits of Donating Blood</h2>
+            <ul>
+                <li>Free health screenings before donation.</li>
+                <li>Feeling of fulfillment by helping others.</li>
+                <li>Potential health benefits for the donor.</li>
+            </ul>
+        </section>
+
+        <section class="process">
+            <h2>The Donation Process</h2>
+            <p>Donating blood is a quick and easy process. Here’s what to expect:</p>
+            <ol>
+                <li>Fill out a registration form.</li>
+                <li>Undergo a health screening.</li>
+                <li>Donate blood (usually takes about 10-15 minutes).</li>
+                <li>Enjoy refreshments and rest for a short while.</li>
+            </ol>
+        </section>
+
+       
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, please contact us at:</p>
+            <p>Email: info@bloodmanagement.org</p>
+            <p>Phone: +94 123 456 789</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blood Management System</p>
+    </footer>
+    <script>
+        // Get the current page path
+        const currentPath = window.location.pathname.split("/").pop();
+        
+        // Select all navigation links
+        const navLinks = document.querySelectorAll("nav ul li a");
+        
+        // Loop through links to match the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active"); // Add 'active' class to the matching link
+            }
+        });
+        </script>
+        
+
+</body>
+</html>

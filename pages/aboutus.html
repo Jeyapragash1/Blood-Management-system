@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us | Blood Management System</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/about.css"> <!-- Separate CSS for About Us page -->
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="../images/log.png" alt="BMS Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donners.html">Donors</a></li>
+                <li><a href="request.html">Request Blood</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <a href="../logins/login .html" class="login-btn">Login</a>
+            <a href="../logins/register.html" class="register-btn">Register</a>
+        </div>
+    </header>
+    <br>
+    <br>
+    <script>
+        window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+});
+
+    </script>
+    
+    <section id="about" class="about-section">
+        <div class="container">
+            <h1 class="fade-in">About Us</h1>
+            <div class="about-content fade-in">
+                <p>Welcome to the Blood Management System, a platform dedicated to improving blood donation and transfusion processes in Sri Lanka.</p>
+                <p>Our mission is to connect donors with patients in need, ensuring a seamless and efficient experience. Inspired by Sri Lanka's vibrant culture, we emphasize community, support, and compassion.</p>
+                <p>Join us in making a difference in the lives of many. Together, we can create a healthier tomorrow.</p>
+            </div>
+            </section>
+
+            <section id="about" class="about-section">
+            <h2 class="fade-in">Our Vision</h2>
+            <p class="fade-in">To be the leading platform for blood management in Sri Lanka, promoting a culture of giving and community health.</p>
+            
+            </section>
+
+            <section id="about" class="about-section">
+
+            <h2 class="fade-in">Meet Our Team</h2>
+            <div class="team fade-in">
+                <div class="team-member">
+                    <img src="../images/ser3.jpg" alt="Team Member 1">
+                    <h3>Jeyapragash Kisho</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="../images/mod1.jpg" alt="Team Member 2">
+                    <h3>D.Keerthikan</h3>
+                    <p>CTO</p>
+                </div>
+                <div class="team-member">
+                    <img src="../images/m4.jpg" alt="Team Member 3">
+                    <h3>E.N.Shahnas</h3>
+                    <p>Community Outreach Coordinator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 Blood Management System. All rights reserved.</p>
+    </footer>
+    <script>
+        // Get the current page path
+        const currentPath = window.location.pathname.split("/").pop();
+        
+        // Select all navigation links
+        const navLinks = document.querySelectorAll("nav ul li a");
+        
+        // Loop through links to match the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active"); // Add 'active' class to the matching link
+            }
+        });
+        </script>
+        
+
+    <script src="../scripts/script.js"></script> <!-- Your main script -->
+    <script src="../scripts/about.js"></script> <!-- JS for About Us animations -->
+</body>
+</html>
